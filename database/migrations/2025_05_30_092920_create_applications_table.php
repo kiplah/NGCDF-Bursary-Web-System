@@ -24,6 +24,9 @@ return new class extends Migration
             $table->boolean('disability')->default(false);
             $table->text('disability_description')->nullable();
             $table->integer('amount_requested')->nullable();
+            $table->string('id_copy_path')->nullable();
+            $table->string('transcript_path')->nullable();
+            $table->string('admission_letter_path')->nullable();
             $table->timestamps();
         });
     }
