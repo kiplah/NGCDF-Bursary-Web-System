@@ -28,7 +28,11 @@ class Application extends Model
     'disability',
     'disability_description',
     'amount_requested',
+    'id_copy_path',
+    'transcript_path',
+    'admission_letter_path',
 ];
+
     protected $casts = [
         'disability' => 'boolean',
         'amount_requested' => 'integer',
