@@ -27,5 +27,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/apply', [ApplicationController::class, 'create'])->name('application.create');
 Route::post('/apply', [ApplicationController::class, 'store'])->name('application.store');
-
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::get('/admin/applications', [ApplicationController::class, 'index'])->name('admin.applications');
 require __DIR__.'/auth.php';

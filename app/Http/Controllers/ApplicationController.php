@@ -58,7 +58,9 @@ class ApplicationController extends Controller
 
     public function index()
     {
-        $applications = Application::all();
-        return view('application.index', compact('applications'));
+        //$applications = Application::all();
+        //return view('application.index', compact('applications'));
+        $applications = \App\Models\Application::latest()->get();
+        return view('admin.index', compact('applications'));
     }
 }

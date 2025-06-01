@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('transcript_path')->nullable();
             $table->string('admission_letter_path')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            //$table->foreignId('user_id')->nullable()->constrained(); // Assuming you want to link to a user
         });
     }
 

@@ -4,6 +4,25 @@
 <div class="container">
     <h2 class="mb-4">NGCDF Bursary Application Form</h2>
 
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <p>Please fill out the form below to apply for the NGCDF Bursary. Ensure all required fields are completed.</p>
+    <p>For any inquiries, please contact the NGCDF office.</p>
+    <p>Note: All fields marked with an asterisk (*) are required.</p>
+
+
     <form action="{{ route('application.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
