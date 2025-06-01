@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="mb-4">NGCDF Bursary Application Form</h2>
 
-    <form action="{{ route('application.store') }}" method="POST">
+    <form action="{{ route('application.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <!-- Personal Info -->
@@ -80,6 +80,20 @@
     <div class="mb-3">
         <label for="amount_requested" class="form-label">Amount Requested (Ksh)</label>
         <input type="number" name="amount_requested" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>ID / Birth Certificate</label>
+        <input type="file" name="id_copy" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Transcript / Report</label>
+        <input type="file" name="transcript" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Admission Letter</label>
+        <input type="file" name="admission_letter" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit Application</button>
